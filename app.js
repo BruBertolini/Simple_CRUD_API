@@ -1,5 +1,6 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+const cors = require('cors');
 
 // Set up the express app
 const app = express();
@@ -7,6 +8,9 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 let memoryList = [];
+
+
+app.use(cors());
 
 function getRandomInt(max) {
     return Math.floor(Math.random() * Math.floor(max));
